@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PriceResponse",
+  "type": "object",
+  "required": [
+    "tier1_price",
+    "tier2_price",
+    "tier3_price"
+  ],
+  "properties": {
+    "tier1_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "tier2_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "tier3_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  }
+}

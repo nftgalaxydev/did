@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "set_record"
+      ],
+      "properties": {
+        "set_record": {
+          "type": "object",
+          "required": [
+            "node",
+            "owner",
+            "ttl"
+          ],
+          "properties": {
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "owner": {
+              "type": "string"
+            },
+            "resolver": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "ttl": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_subnode_owner"
+      ],
+      "properties": {
+        "set_subnode_owner": {
+          "type": "object",
+          "required": [
+            "label",
+            "node",
+            "owner"
+          ],
+          "properties": {
+            "label": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "owner": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_owner"
+      ],
+      "properties": {
+        "set_owner": {
+          "type": "object",
+          "required": [
+            "node",
+            "owner"
+          ],
+          "properties": {
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "owner": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_resolver"
+      ],
+      "properties": {
+        "set_resolver": {
+          "type": "object",
+          "required": [
+            "node"
+          ],
+          "properties": {
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "resolver": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_t_t_l"
+      ],
+      "properties": {
+        "set_t_t_l": {
+          "type": "object",
+          "required": [
+            "node",
+            "ttl"
+          ],
+          "properties": {
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "ttl": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_approval_for_all"
+      ],
+      "properties": {
+        "set_approval_for_all": {
+          "type": "object",
+          "required": [
+            "approved",
+            "node",
+            "operator"
+          ],
+          "properties": {
+            "approved": {
+              "type": "boolean"
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "operator": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_config"
+      ],
+      "properties": {
+        "set_config": {
+          "type": "object",
+          "required": [
+            "default_resolver",
+            "owner"
+          ],
+          "properties": {
+            "default_resolver": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

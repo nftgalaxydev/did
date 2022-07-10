@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstantiateMsg",
+  "type": "object",
+  "required": [
+    "enable_registration",
+    "max_commitment_age",
+    "min_commitment_age",
+    "min_registration_duration",
+    "registrar_address",
+    "tier1_price",
+    "tier2_price",
+    "tier3_price"
+  ],
+  "properties": {
+    "enable_registration": {
+      "type": "boolean"
+    },
+    "max_commitment_age": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "min_commitment_age": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "min_registration_duration": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "registrar_address": {
+      "type": "string"
+    },
+    "tier1_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "tier2_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "tier3_price": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  }
+}

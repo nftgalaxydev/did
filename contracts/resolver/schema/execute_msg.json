@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "set_address"
+      ],
+      "properties": {
+        "set_address": {
+          "type": "object",
+          "required": [
+            "address",
+            "coin_type",
+            "node"
+          ],
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "coin_type": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_terra_address"
+      ],
+      "properties": {
+        "set_terra_address": {
+          "type": "object",
+          "required": [
+            "address",
+            "node"
+          ],
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_text_data"
+      ],
+      "properties": {
+        "set_text_data": {
+          "type": "object",
+          "required": [
+            "key",
+            "node",
+            "value"
+          ],
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_content_hash"
+      ],
+      "properties": {
+        "set_content_hash": {
+          "type": "object",
+          "required": [
+            "hash",
+            "node"
+          ],
+          "properties": {
+            "hash": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            },
+            "node": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "uint8",
+                "minimum": 0.0
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "set_config"
+      ],
+      "properties": {
+        "set_config": {
+          "type": "object",
+          "required": [
+            "interface_id",
+            "owner",
+            "registry_address"
+          ],
+          "properties": {
+            "interface_id": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "owner": {
+              "type": "string"
+            },
+            "registry_address": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

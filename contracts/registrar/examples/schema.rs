@@ -1,0 +1,48 @@
+use std::env::current_dir;
+use std::fs::create_dir_all;
+
+use cosmwasm_schema::{export_schema, export_schema_with_title, remove_schemas, schema_for};
+
+use gid::registrar::{
+    InstantiateMsg,
+    ExecuteMsg,
+    QueryMsg,
+    MigrateMsg,
+    IsAvailableResponse,
+    GetExpiresResponse,
+    GetBaseNodeResponse,
+    GetRegistryResponse,
+    GetGracePeriodResponse,
+    OwnerOfResponse,
+    ApprovedForAllResponse,
+    NumTokensResponse,
+    ContractInfoResponse,
+    TokensResponse,
+    MinterResponse,
+    ConfigResponse
+};
+
+fn main() {
+    let mut out_dir = current_dir().unwrap();
+    out_dir.push("schema");
+    create_dir_all(&out_dir).unwrap();
+    remove_schemas(&out_dir).unwrap();
+
+    export_schema(&schema_for!(MigrateMsg), &out_dir);
+    export_schema(&schema_for!(InstantiateMsg), &out_dir);
+    // FIXME
+    // export_schema_with_title(&schema_for!(ExecuteMsg), &out_dir, "ExecuteMsg");
+    export_schema(&schema_for!(QueryMsg), &out_dir);
+    export_schema(&schema_for!(IsAvailableResponse), &out_dir);
+    export_schema(&schema_for!(GetExpiresResponse), &out_dir);
+    export_schema(&schema_for!(GetBaseNodeResponse), &out_dir);
+    export_schema(&schema_for!(GetRegistryResponse), &out_dir);
+    export_schema(&schema_for!(GetGracePeriodResponse), &out_dir);
+    export_schema(&schema_for!(OwnerOfResponse), &out_dir);
+    export_schema(&schema_for!(ApprovedForAllResponse), &out_dir);
+    export_schema(&schema_for!(NumTokensResponse), &out_dir);
+    export_schema(&schema_for!(ContractInfoResponse), &out_dir);
+    export_schema(&schema_for!(TokensResponse), &out_dir);
+    export_schema(&schema_for!(MinterResponse), &out_dir);
+    export_schema(&schema_for!(ConfigResponse), &out_dir);
+}

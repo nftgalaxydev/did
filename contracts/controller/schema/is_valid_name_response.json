@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IsValidNameResponse",
+  "type": "object",
+  "required": [
+    "is_valid_name"
+  ],
+  "properties": {
+    "is_valid_name": {
+      "type": "boolean"
+    }
+  }
+}

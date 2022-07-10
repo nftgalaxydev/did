@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OperatorResponse",
+  "type": "object",
+  "required": [
+    "is_approve"
+  ],
+  "properties": {
+    "is_approve": {
+      "type": "boolean"
+    }
+  }
+}
